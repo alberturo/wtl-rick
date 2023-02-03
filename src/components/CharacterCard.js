@@ -2,13 +2,15 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-export default function CharacterCard({ name, species, image }) {
+export default function CharacterCard({ name, species, image, created }) {
   const navigation = useNavigation();
 
   return (
     <TouchableOpacity
       className="w-full bg-white dark:bg-gray-50/10 rounded-3xl p-4 my-2"
-      onPress={() => navigation.navigate("Character", { name, species })}
+      onPress={() =>
+        navigation.navigate("Character", { name, species, created })
+      }
     >
       <View className="bg-white rounded-xl">
         <Image
